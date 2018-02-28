@@ -1,0 +1,3 @@
+FROM centos:7
+RUN yum install -y crontabs tar wget openssl sysvinit-tools iproute which initscripts
+CMD ["/usr/sbin/init"]

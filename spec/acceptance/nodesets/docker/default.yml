@@ -1,0 +1,33 @@
+HOSTS:
+  pdx-master:
+    hypervisor: docker
+    roles:
+      - master
+    platform: centos-7-x64
+    image: centos:7
+    docker_preserve_image: true
+    docker_image_commands:
+      - 'yum install -y crontabs tar wget openssl sysvinit-tools iproute which initscripts'
+    docker_cmd: '["/usr/sbin/init"]'
+  lon-agent:
+    hypervisor: docker
+    roles:
+      - agent
+    platform: ubuntu-16.04-amd64
+    image: ubuntu:16.04
+    docker_preserve_image: true
+    docker_image_commands:
+      - 'apt-get install -y net-tools wget apt-transport-https'
+    docker_cmd: '["/sbin/init"]'
+  nyc-agent:
+    hypervisor: docker
+    roles:
+      - agent
+    platform: centos-7-x64
+    image: centos:7
+    docker_preserve_image: true
+    docker_image_commands:
+      - 'yum install -y crontabs tar wget openssl sysvinit-tools iproute which initscripts'
+    docker_cmd: '["/usr/sbin/init"]'
+CONFIG:
+  trace_limit: 200

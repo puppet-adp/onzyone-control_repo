@@ -1,0 +1,3 @@
+FROM ubuntu:16.04
+RUN apt-get install -y net-tools wget apt-transport-https
+CMD ["/sbin/init"]

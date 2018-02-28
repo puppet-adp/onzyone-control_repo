@@ -1,0 +1,29 @@
+---
+branches:
+  only:
+    - production
+sudo: false
+language: ruby
+cache: bundler
+before_install:
+  - gem update bundler
+matrix:
+  fast_finish: true
+  include:
+  - rvm: 2.1.9
+    dist: trusty
+    env:
+#      - USERNAME=WhatsARanjit
+      - BEAKER_set=docker/default
+      - PE_VERSION=2017.3.2
+      - PE_PLATFORM=el-7
+      - PE_ARCH=x86_64
+    script: bundle exec rake beaker
+    services: docker
+    sudo: required
+notifications:
+  email:
+    recipients:
+      - ranjit+endorsed@puppet.com
+    on_success: change
+    on_failure: never
