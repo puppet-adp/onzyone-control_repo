@@ -13,7 +13,7 @@ matrix:
   - rvm: 2.1.9
     dist: trusty
     env:
-#      - USERNAME=WhatsARanjit
+      - USERNAME='onzyone'
       - BEAKER_set=docker/default
       - PE_VERSION=2017.3.2
       - PE_PLATFORM=el-7
