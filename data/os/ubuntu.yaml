@@ -1,0 +1,8 @@
+---
+profiles::sysctl::sysctl_values:
+  kernel.shmall: 2097152
+  kernel.shmmax: 2147483648
+  kernel.shmmni: 4096
+  fs.file-max: 65536
+  vm.swappiness: 0
+  vm.vfs_cache_pressure: 50

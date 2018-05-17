@@ -1,0 +1,7 @@
+<%- | Hash $sysctl_values,
+| -%>
+<%# Parameter tag ↑ -%>
+
+<% $sysctl_values.keys.sort.each |$key| { -%>
+    <%= $key %> <%= $sysctl_values[$key] %>
+<% } -%>
